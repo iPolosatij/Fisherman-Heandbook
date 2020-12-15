@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -24,13 +26,21 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
+    private ListView listView;
+    private String[] array;
+    private ArrayAdapter<String> arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        listView = findViewById(R.id.list_view);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        array = getResources().getStringArray(R.array.first);
+        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
+        listView.setAdapter(arrayAdapter);
 
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -61,10 +71,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if(id == R.id.nav_fish){
-            Toast.makeText(this, "РЫБА", Toast.LENGTH_SHORT).show();
 
+            array = getResources().getStringArray(R.array.fishes);
+            arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
+            listView.setAdapter(arrayAdapter);
         }else if(id == R.id.nav_bait){
-            Toast.makeText(this, "НАЖИВКА", Toast.LENGTH_SHORT).show();
+
+            array = getResources().getStringArray(R.array.bait);
+            arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
+            listView.setAdapter(arrayAdapter);
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;

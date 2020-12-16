@@ -26,6 +26,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
@@ -43,7 +46,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         array = getResources().getStringArray(R.array.first);
-        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
+        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
+                new ArrayList<String>(Arrays.asList(array)));
         listView.setAdapter(arrayAdapter);
         logo = findViewById(R.id.conteiner);
 
@@ -74,37 +78,44 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
+        logo.setBackground(getResources().getDrawable(R.color.white));
 
         if(id == R.id.nav_fish){
-            logo.setBackground(getResources().getDrawable(R.color.white));
+
             array = getResources().getStringArray(R.array.fishes);
-            arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
-            listView.setAdapter(arrayAdapter);
+            arrayAdapter.clear();
+            arrayAdapter.addAll(array);
+            arrayAdapter.notifyDataSetChanged();
         }else if(id == R.id.nav_bait){
-            logo.setBackground(getResources().getDrawable(R.color.white));
+
             array = getResources().getStringArray(R.array.bait);
-            arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
-            listView.setAdapter(arrayAdapter);
+            arrayAdapter.clear();
+            arrayAdapter.addAll(array);
+            arrayAdapter.notifyDataSetChanged();
         }else if(id == R.id.nav_tackle){
-            logo.setBackground(getResources().getDrawable(R.color.white));
+
             array = getResources().getStringArray(R.array.tackle);
-            arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
-            listView.setAdapter(arrayAdapter);
+            arrayAdapter.clear();
+            arrayAdapter.addAll(array);
+            arrayAdapter.notifyDataSetChanged();
         }else if(id == R.id.nav_lure) {
-            logo.setBackground(getResources().getDrawable(R.color.white));
+
             array = getResources().getStringArray(R.array.lure);
-            arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
-            listView.setAdapter(arrayAdapter);
+            arrayAdapter.clear();
+            arrayAdapter.addAll(array);
+            arrayAdapter.notifyDataSetChanged();
         } else if(id == R.id.nav_story) {
-            logo.setBackground(getResources().getDrawable(R.color.white));
+
             array = getResources().getStringArray(R.array.story);
-            arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
-            listView.setAdapter(arrayAdapter);
+            arrayAdapter.clear();
+            arrayAdapter.addAll(array);
+            arrayAdapter.notifyDataSetChanged();
         }else if(id == R.id.nav_tip) {
-            logo.setBackground(getResources().getDrawable(R.color.white));
+
             array = getResources().getStringArray(R.array.tip);
-            arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
-            listView.setAdapter(arrayAdapter);
+            arrayAdapter.clear();
+            arrayAdapter.addAll(array);
+            arrayAdapter.notifyDataSetChanged();
         }
 
         drawer.closeDrawer(GravityCompat.START);

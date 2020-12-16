@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="first">
-        <item>Приложение -
-            Fisherman Handbook -
-            помощь для начинающих рыбаков</item>
+        <item> </item>
 
     </string-array>
     <string-array name="fishes">
@@ -14,10 +12,36 @@
         <item>Налим</item>
     </string-array>
     <string-array name="bait">
-        <item>Червь</item>
+        <item>Черви</item>
         <item>Кукуруза</item>
         <item>Хлеб</item>
-        <item>Рис</item>
-        <item>Горох</item>
+        <item>Крупы</item>
+        <item>Готовые приманки</item>
+    </string-array>
+    <string-array name="tackle">
+        <item>Грузила</item>
+        <item>Крючки</item>
+        <item>Леска</item>
+        <item>Блёсны</item>
+        <item>Поплавки</item>
+    </string-array>
+    <string-array name="lure">
+        <item>Хлеб</item>
+        <item>Специальная прикормка</item>
+        <item>Крупы</item>
+        <item>Черви</item>
+    </string-array>
+    <string-array name="story">
+        <item>Случай на рыбалке</item>
+        <item>Рыбак и море</item>
+        <item>Акула</item>
+        <item>Русалочка</item>
+    </string-array>
+    <string-array name="tip">
+        <item>Прикормка</item>
+        <item>Сезоны</item>
+        <item>Рыбные места</item>
+        <item>Экипировка</item>
+        <item>Подготовка к рыбалке</item>
     </string-array>
 </resources>
